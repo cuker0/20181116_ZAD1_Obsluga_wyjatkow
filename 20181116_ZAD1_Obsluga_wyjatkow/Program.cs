@@ -15,15 +15,16 @@ namespace _20181116_ZAD1_Obsluga_wyjatkow
 
             if(args.Length > 0 )
             {
-                path = args[0];
+                path = args[0];  // podanie argumenty do pliku exe
             }
 
-            Console.Write($"Podaj sciezke dostepu:{path}");
+            Console.Write($"Podaj sciezke dostepu: {path}");
             path = Console.ReadLine();
+            FileSystemWatcher folder; // wyciagniecie folderu ze scope
 
             try
             {
-                FileSystemWatcher folder = new FileSystemWatcher(path);
+                folder = new FileSystemWatcher(path);
             }
             catch (ArgumentNullException ex)
             {
